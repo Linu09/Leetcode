@@ -34,3 +34,16 @@
 # Read from the file words.txt and output the word frequency list to stdout.
 
 cat words.txt | tr [:space:] "\n" | sed '/^$/d' | tr '[:upper:]' '[:lower:]'|sort|uniq -c|sort -nr | awk '{ print $2,$1}'
+
+
+
+##################################################################################
+# Explaination
+# cat- command is use to open a file on terminal without edit mode
+# tr [:space:] "\n" - this will translate all the white spaces with new line 
+# sed '/^$/d' - remove all the blank lines from the file
+# tr '[:upper:]' '[:lower:]'- convert upper case (if any) to lower case
+# sort - sorts the context of file line by line
+# uniq -c - how many times each line occurs in the file 
+# sort -nr - it sorts the numbers in reverse order (descending)
+# awk '{ print $2,$1}' - it prints the second column first and first column second as the above results require words first followed by numbers in descending order
