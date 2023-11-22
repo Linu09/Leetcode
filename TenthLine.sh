@@ -28,4 +28,7 @@
 ##################################################################################
 #!/bin/sh
 # Read from the file file.txt and output the tenth line to stdout.
-cat file.txt | sed -n '10p'
+if [[ $(cat file.txt | wc -l) -ge 10 ]]
+then 
+    sed -n 10p < file.txt
+fi 
